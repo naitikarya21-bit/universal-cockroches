@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Berojgar Cockroach Party - Fun Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka+One&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #fffbe8 60%, #eeffc6 100%);
+      font-family: 'Arial', sans-serif;
+      color: #323232;
+      min-height: 100vh;
+    }
+    
+    header {
+      background: linear-gradient(90deg, #54be6a 0%, #4dcc78 100%);
+      color: white;
+      padding: 30px 10px;
+      text-align: center;
+      border-bottom: 8px solid #ffd600;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .bcp-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .bcp-logo svg {
+      width: 120px;
+      height: 120px;
+      filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.2));
+    }
+    
+    h1 {
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 3em;
+      letter-spacing: 4px;
+      margin: 10px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .subtitle {
+      font-size: 1.4em;
+      font-family: 'Fredoka One', sans-serif;
+      margin: 10px 0 0 0;
+      color: #fff9e6;
+    }
+    
+    nav {
+      background: #3d9d56;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: 0.3s;
+      border-bottom: 4px solid transparent;
+    }
+    
+    nav a:hover {
+      background: #2d7a42;
+      border-bottom: 4px solid #ffd600;
+    }
+    
+    nav a.active {
+      background: #54be6a;
+      border-bottom: 4px solid #ffd600;
+    }
+    
+    section {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(60,33,0,0.15);
+      padding: 40px 30px;
+    }
+    
+    .section-title {
+      font-family: 'Fredoka One', sans-serif;
+      font-size: 2.2em;
+      color: #1a8437;
+      margin: 0 0 30px 0;
+      text-align: center;
+    }
+    
+    .gallery-intro {
+      text-align: center;
+      font-size: 1.1em;
+      color: #3d2f23;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    
+    .gallery-item {
+      background: linear-gradient(135deg, #fff4e6 0%, #fffbe8 100%);
+      border: 3px solid #f3740a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(243,116,10,0.2);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05) translateY(-8px);
+      box-shadow: 0 8px 25px rgba(243,116,10,0.4);
+      border-color: #4dcc78;
+    }
+    
+    .gallery-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    
+    .gallery-caption {
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.05em;
+      color: #1a8437;
+    }
+    
+    .gallery-quote {
+      padding: 10px;
+      background: white;
+      border-top: 2px solid #f3740a;
+      font-size: 0.95em;
+      color: #f3740a;
+      font-style: italic;
+    }
+    
+    .quote-section {
+      background: linear-gradient(135deg, #fff4e6 0%, #fffbe8 100%);
+      border-left: 5px solid #f3740a;
+      padding: 30px;
+      margin: 40px 0;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .quote-section h2 {
+      font-family: 'Fredoka One', sans-serif;
+      color: #1a8437;
+      font-size: 1.6em;
+      margin-bottom: 20px;
+    }
+    
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .quote-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #4dcc78;
+      box-shadow: 0 2px 8px rgba(77,204,120,0.2);
+    }
+    
+    .quote-text {
+      font-size: 1.05em;
+      color: #3d2f23;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    
+    .quote-author {
+      color: #f3740a;
+      font-weight: bold;
+      font-size: 0.95em;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1em;
+      color: #4e4e4e;
+      background: linear-gradient(90deg, #fbfdea 0%, #fffbe8 100%);
+      border-top: 3px solid #54be6a;
+      padding: 30px 20px;
+    }
+    
+    @media (max-width: 768px) {
+      section { 
+        padding: 25px 15px;
+        margin: 20px 10px;
+      }
+      h1 { 
+        font-size: 2em;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bcp-logo">
+      <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ee5a52;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="95" rx="53" ry="80" fill="url(#grad1)"/>
+        <line x1="40" y1="68" x2="5" y2="40" stroke="#8b4513" stroke-width="7" stroke-linecap="round"/>
+        <line x1="45" y1="93" x2="10" y2="110" stroke="#8b4513" stroke-width="7" stroke-linecap="round"/>
+        <line x1="60" y1="120" x2="15" y2="170" stroke="#8b4513" stroke-width="7" stroke-linecap="round"/>
+        <line x1="160" y1="70" x2="195" y2="45" stroke="#8b4513" stroke-width="7" stroke-linecap="round"/>
+        <line x1="155" y1="105" x2="185" y2="120" stroke="#8b4513" stroke-width="7" stroke-linecap="round"/>
+        <line x1="140" y1="135" x2="190" y2="180" stroke="#8b4513" stroke-width="7" stroke-linecap="round"/>
+        <ellipse cx="100" cy="40" rx="32" ry="32" fill="#d35400"/>
+        <circle cx="85" cy="35" r="5" fill="#fff" opacity="0.6"/>
+        <path d="M82 23 Q60 4 25 15" stroke="#3d2f23" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M118 23 Q165 3 176 25" stroke="#3d2f23" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="38" cy="140" r="16" fill="#2ecc71"/>
+        <rect x="35" y="156" width="6" height="25" fill="#8b6914"/>
+        <circle cx="170" cy="150" r="18" fill="#27ae60"/>
+        <rect x="167" y="168" width="6" height="25" fill="#8b6914"/>
+        <circle cx="82" cy="185" r="11" fill="#f1c40f"/>
+        <rect x="78" y="196" width="8" height="16" fill="#3498db"/>
+        <circle cx="122" cy="181" r="12" fill="#e74c3c"/>
+        <rect x="118" y="193" width="8" height="17" fill="#9b59b6"/>
+      </svg>
+      <div style="font-family:'Luckiest Guy',cursive; font-size:1.3em; letter-spacing:3px;">B.C.P.</div>
+    </div>
+    <h1>🎭 Fun Gallery 🎉</h1>
+    <div class="subtitle">Cockroaches, Memes & Gen Z Chaos!</div>
+  </header>
+  
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="members.html">👥 Members</a>
+    <a href="gallery.html" class="active">🎭 Fun Gallery</a>
+  </nav>
+  
+  <section>
+    <h2 class="section-title">🦗 Our Fabulous Cockroaches! 🦗</h2>
+    <div class="gallery-intro">
+      <p>Welcome to the most hilarious collection of cockroach photos and Gen Z moments! 
+      These legendary insects are living their best lives, and honestly, they're our inspiration! 🌟</p>
+    </div>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img class="gallery-image" src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=400&q=80" alt="Cool Cockroach">
+        <div class="gallery-caption">The Cool One 😎</div>
+        <div class="gallery-quote">"Vibing, not explaining."</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img class="gallery-image" src="https://images.unsplash.com/photo-1534103462547-407f6289df14?auto=format&fit=crop&w=400&q=80" alt="Party Cockroach">
+        <div class="gallery-caption">The Party Animal 🎉</div>
+        <div class="gallery-quote">"Life's too short for boring days!"</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img class="gallery-image" src="https://images.unsplash.com/photo-1517329683236-6884c1175b8d?auto=format&fit=crop&w=400&q=80" alt="Thoughtful Cockroach">
+        <div class="gallery-caption">The Philosopher 🤔</div>
+        <div class="gallery-quote">"Existential crisis at 2 AM, be relatable."</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img class="gallery-image" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=400&q=80" alt="Confident Cockroach">
+        <div class="gallery-caption">The Confident King 👑</div>
+        <div class="gallery-quote">"Your rejection is my motivation!"</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img class="gallery-image" src="https://images.unsplash.com/photo-1519679003100-a0bd8167c91f?auto=format&fit=crop&w=400&q=80" alt="Adventurer Cockroach">
+        <div class="gallery-caption">The Adventurer 🚀</div>
+        <div class="gallery-quote">"New city, new dreams, same CVs!"</div>
+      </div>
+      
+      <div class="gallery-item">
+        <img class="gallery-image" src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=400&q=80" alt="Artistic Cockroach">
+        <div class="gallery-caption">The Artist 🎨</div>
+        <div class="gallery-quote">"Creating chaos as a full-time job!"</div>
+      </div>
+    </div>
+    
+    <div class="quote-section">
+      <h2>💬 BCP Comedy Gold 💬</h2>
+      <p style="font-size: 1.05em; margin-bottom: 20px;">The funniest quotes that define our Gen Z struggle and victory!</p>
+      
+      <div class="quote-grid">
+        <div class="quote-card">
+          <div class="quote-text">"My therapist charges $100/hour. My friends? Free emotional support and terrible advice. I choose friends."</div>
+          <div class="quote-author">— Unemployed Soul #47</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"They said 'Don't put all eggs in one basket.' I put my entire worth in LinkedIn profile and it rejected me."</div>
+          <div class="quote-author">— The LinkedIn Legend</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"I'm not lazy, I'm just on a strategic pause from productivity. My pause has lasted 6 months now."</div>
+          <div class="quote-author">— Professional Procrastinator</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"Coffee is my love language, WiFi is my oxygen, and unemployment is my superpower!"</div>
+          <div class="quote-author">— The Coffee Queen</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"I've failed more times than I've succeeded. Does that make me resilient or just persistent? Asking for a friend."</div>
+          <div class="quote-author">— The Hustle Hustler</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"They ask 'What do you do?' I answer 'I exist and create content about existing. That's my job now.'"</div>
+          <div class="quote-author">— The Memeing Muse</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"Networking events are just fancy places to awkwardly eat free food while selling yourself short!"</div>
+          <div class="quote-author">— The Eternal Optimist</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"My degree says I'm educated. My bank account says I'm professional beggar. Reality is subjective!"</div>
+          <div class="quote-author">— The Broke Scholar</div>
+        </div>
+        
+        <div class="quote-card">
+          <div class="quote-text">"I'm not unemployed, I'm just pre-employed. My future self will be SO grateful to my past self!"</div>
+          <div class="quote-author">— The Delusional Dreamer</div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #fff4e6 0%, #fffbe8 100%); border: 3px dashed #f3740a; border-radius: 15px; padding: 25px; text-align: center; margin-top: 30px;">
+      <h3 style="font-family: 'Fredoka One', sans-serif; color: #1a8437; font-size: 1.4em; margin-bottom: 15px;">🎯 Ready to Join the Chaos? 🎯</h3>
+      <p style="font-size: 1.1em; color: #3d2f23; margin-bottom: 15px;">
+        <b>BCP is actively recruiting!</b> Are you a confused Gen Z student? 
+        Do you make memes about your job search? Can you laugh at your own failures? 
+      </p>
+      <p style="font-size: 1.05em; color: #f3740a; font-weight: bold;">
+        💌 Email us at: <b>join.bcp@funparty.com</b> 💌
+      </p>
+      <p style="font-size: 0.95em; color: #666; margin-top: 15px;">
+        Subject line ideas: "I'm broken but hilarious" or "Send help and memes"
+      </p>
+    </div>
+  </section>
+  
+  <footer>
+    © 2026 <b style="color: #f3740a;">Berojgar Cockroach Party (BCP)</b><br>
+    <b>"Not a political party, just a vibe!"</b> ✨<br>
+    Made with 💜 by Gen Z Students for Gen Z Students<br>
+    <small>Website created with ❤️ by Copilot</small>
+  </footer>
+</body>
+</html>
