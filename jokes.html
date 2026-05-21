@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>😂 BCP Comedy & Memes - The Funniest Part!</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', 'Arial', sans-serif;
+      background: linear-gradient(135deg, #FF6B9D 0%, #FFC75F 50%, #845EC2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #E74C3C 0%, #C0392B 100%);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 5px dashed #FFD700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin: 10px 0;
+      text-shadow: 3px 3px 0px #000;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    header p {
+      font-size: 1.3em;
+      color: #FFD700;
+      font-weight: bold;
+    }
+
+    /* Navigation */
+    nav {
+      background: #34495E;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: 0.3s;
+      border-right: 1px solid #2C3E50;
+    }
+
+    nav a:hover {
+      background: #E74C3C;
+      transform: scale(1.1);
+    }
+
+    nav a.active {
+      background: #E74C3C;
+      border-bottom: 4px solid #FFD700;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Section */
+    section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      border: 5px solid #FFD700;
+    }
+
+    section h2 {
+      font-size: 2.5em;
+      color: #E74C3C;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    section h3 {
+      font-size: 1.8em;
+      color: #E74C3C;
+      margin: 30px 0 20px 0;
+      text-align: center;
+    }
+
+    /* Jokes Grid */
+    .jokes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .joke-card {
+      background: linear-gradient(135deg, #FFE66D 0%, #FF6B9D 100%);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border: 3px solid #E74C3C;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .joke-card:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .joke-emoji {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .joke-text {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .joke-punchline {
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1em;
+      color: #E74C3C;
+      font-weight: bold;
+      font-style: italic;
+      border-left: 4px solid #E74C3C;
+    }
+
+    /* Meme Section */
+    .meme-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .meme-card {
+      background: #f5f5f5;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border: 3px solid #845EC2;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .meme-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .meme-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .meme-caption {
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      color: #845EC2;
+      font-size: 1em;
+    }
+
+    /* Footer */
+    footer {
+      background: #34495E;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+      border-top: 5px dashed #FFD700;
+      font-size: 1.1em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      section {
+        padding: 20px;
+      }
+      nav a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>😂 BCP Comedy Gold 😂</h1>
+    <p>✨ The Funniest Memes & Quotes in the Universe ✨</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="students.html">👨‍🎓 Gen Z Squad</a>
+    <a href="jokes.html" class="active">😂 Comedy & Memes</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <section>
+      <h2>🎭 BCP Comedy & Memes 🎭</h2>
+      <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+        Buckle up! This is where BCP gets absolutely HILARIOUS!
+      </p>
+
+      <!-- Jokes Section -->
+      <h3>💬 Our Funniest Quotes Ever! 💬</h3>
+      <div class="jokes-grid">
+        <div class="joke-card">
+          <div class="joke-emoji">😂</div>
+          <div class="joke-text">"My life is like a bad internet connection..."</div>
+          <div class="joke-punchline">"Constantly buffering with no success in sight!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">💼</div>
+          <div class="joke-text">"I have a job..."</div>
+          <div class="joke-punchline">"Making memes about not having a job!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">☕</div>
+          <div class="joke-text">"Coffee is my best friend because..."</div>
+          <div class="joke-punchline">"It never leaves me hanging like employers do!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">📱</div>
+          <div class="joke-text">"My LinkedIn profile is so inspirational..."</div>
+          <div class="joke-punchline">"That even I don't believe what I wrote!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">🎓</div>
+          <div class="joke-text">"I spent 4 years in college to learn..."</div>
+          <div class="joke-punchline">"That the real education is crying in the job market!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">🚀</div>
+          <div class="joke-text">"I'm a side hustler because..."</div>
+          <div class="joke-punchline">"The main hustle rejected me!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">💰</div>
+          <div class="joke-text">"My bank account is so empty..."</div>
+          <div class="joke-punchline">"Even echo feels lonely!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">🎯</div>
+          <div class="joke-text">"I've sent 500+ CVs..."</div>
+          <div class="joke-punchline">"The universe is still deciding if I'm worthy!"</div>
+        </div>
+
+        <div class="joke-card">
+          <div class="joke-emoji">😅</div>
+          <div class="joke-text">"Networking is my weakness because..."</div>
+          <div class="joke-punchline">"I can't sell myself even if my life depends on it!"</div>
+        </div>
+      </div>
+
+      <!-- Meme Section -->
+      <h3>🎨 Our Legendary Meme Collection 🎨</h3>
+      <div class="meme-grid">
+        <div class="meme-card">
+          <img src="https://images.unsplash.com/photo-1516191329306-940bc63dd558?auto=format&fit=crop&w=400&q=80" alt="Meme 1">
+          <div class="meme-caption">❌ Job Search Reality vs 😍 Resume Fantasy</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8cfb6?auto=format&fit=crop&w=400&q=80" alt="Meme 2">
+          <div class="meme-caption">🎓 My Skills: 100% || Opportunities: 0%</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Meme 3">
+          <div class="meme-caption">😴 Me waiting for a reply vs 🚀 Actual response time</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://images.unsplash.com/photo-1487923917519-09b0b331f84f?auto=format&fit=crop&w=400&q=80" alt="Meme 4">
+          <div class="meme-caption">💰 Expected Salary vs 😭 Actual Offer</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=400&q=80" alt="Meme 5">
+          <div class="meme-caption">🎬 Interview: "Tell me about yourself" vs 😶 My brain</div>
+        </div>
+        <div class="meme-card">
+          <img src="https://images.unsplash.com/photo-1499546485921-08637efead8c?auto=format&fit=crop&w=400&q=80" alt="Meme 6">
+          <div class="meme-caption">📊 My motivation chart: 📈 Memes 📉 Job search</div>
+        </div>
+      </div>
+
+      <!-- Why BCP Section -->
+      <h3 style="margin-top: 40px;">✨ Why BCP is Life-Changing ✨</h3>
+      <div class="jokes-grid">
+        <div class="joke-card" style="background: linear-gradient(135deg, #845EC2 0%, #667eea 100%); border-color: #845EC2;">
+          <div class="joke-emoji">👥</div>
+          <div class="joke-text">Community</div>
+          <div class="joke-punchline">Find your tribe of fellow "creatively employed" students!</div>
+        </div>
+        <div class="joke-card" style="background: linear-gradient(135deg, #FF6B9D 0%, #FF8B94 100%); border-color: #FF6B9D;">
+          <div class="joke-emoji">😂</div>
+          <div class="joke-text">Laughs</div>
+          <div class="joke-punchline">Memes and jokes that hit too close to home!</div>
+        </div>
+        <div class="joke-card" style="background: linear-gradient(135deg, #FFC75F 0%, #FFE66D 100%); border-color: #FFC75F;">
+          <div class="joke-emoji">💪</div>
+          <div class="joke-text">Support</div>
+          <div class="joke-punchline">We survive the job market together!</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><strong>🦗 BEROJGAR COCKROACH PARTY 🦗</strong></p>
+    <p>"Not a political party, just a vibe!"</p>
+    <p>Have a funny joke? Send it to: <strong>jokes@bcp.party</strong></p>
+    <p>© 2026 BCP - All memes reserved 😂</p>
+  </footer>
+</body>
+</html>
